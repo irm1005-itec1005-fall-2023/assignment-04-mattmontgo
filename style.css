@@ -4,53 +4,236 @@
  * You can modify these styles but you don't have to
  */
 
-/*
- VARIABLES
+/* For assignment, I ended up changing the CSS because I found that it 
+ not what I wanted and also it didn't look good. So I did end up modifying
+ the CSS. Additionally, I used ChatGPT for loading the picture onto the
+ background and container, as I struggled to come up with a way to finsih
+ it on my own. 
+ */
+
+/* Just in case the copy/paste didn't work from the visual studio app, let me know, as I am still trying
+to figure how it works
 */
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
-}
-
-/*
-  PAGE / BODY
-*/
+ /*////ChatGPT was used for these two sections////*/
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
-}
-
-main {
-  min-height: 100vh;
-
+  height: 100vh;
+  background-image: url('./images/favicon/todopattern.jpg'); /* Replace with the path to your PNG image */
+  background-size: cover;
+  background-position: center;
+  margin: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
 
+.todo-container {
+  width: 80%; /* Adjust as needed */
+  max-width: 600px; /* Set a maximum width for the to-do container */
+  margin: 20px auto; /* Center the to-do container and add some spacing */
+  padding: 20px; /* Add padding inside the to-do container */
+  background-color: rgba(17, 184, 230, 0.895); /* Add a semi-transparent background color */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
 
-/****** Screen reader text utility clsas *******/
-.sr-only {
+h1 {
+  margin-top: 3vw;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  text-shadow: 0rem 0rem 2rem black;
+}
+
+.containers{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2rem;
+  border: 2px solid #adadad;
+}
+
+.counters{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.todoCount{
+  margin-right: 1rem;
+}
+
+.deleteBtn{
+  margin-right: 1rem;
+}
+
+.input{
+  display: flex;
+  position: relative;
+}
+
+.btn{
+  margin-top: 1vw;
+  color: #2b2b2b;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  background-color: white;
+  border: 2px solid #2e2e2e;
   position: absolute;
-  width: 1px;
-  height: 1px;
+  right: 0.5rem;
+  border-radius: 2rem;
+  align-self: center;
+  margin-bottom: 3vw;
+}
+
+.btn:hover{
+  background-color: white;
+  color: green;
+  cursor: pointer;
+}
+
+.inputBox{
+  margin-top: 1vw;
+  color: white;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  background-color: rgb(31, 208, 228);
+  border: 2px solid #2e2e2e;
+  border-radius: 2rem;
+  width: 100%;
+  margin-bottom: 3vw;
+}
+
+.inputBox:focus{
+  outline: none;
+}
+
+input[type="text"]::placeholder{
+  color: black;
+}
+
+.todoContainer{
+  display: flex;
+  gap: 1rem
+}
+
+ul{
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin; 
+  -ms-overflow-style: thin; 
+  scrollbar-color: #d4d4d4 transparent;
+}
+
+li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+  border: 2px solid #adadad;
+  border-radius: 3rem;
+}
+
+#todoList{
+  color: rgb(44, 43, 43);
+  font-weight: 600;
+}
+
+.clearBtn{
+  border: none;
+  background: none;
+  color: #1babe9;
+  font-weight: 900;
+}
+
+.clearBtn:hover{
+  color: #0956e6;
+  cursor: pointer;
+}
+
+.doneCount span{
+  color: green;
+  font-weight: 600;
+}
+
+.todoCount span{
+  color: red;
+  font-weight: 600;
+}
+
+li span{
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+li.completed span{
+  text-decoration: line-through;
+  color: #adadad;
+}
+
+li.completed{
+  border-style:dashed;
+}
+
+.deleteTask{
+  margin-right: 1rem;
+  color: #54CAE7;
+  font-weight: 900;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.deleteTask:hover{
+  color: #e60909;
+}
+
+.list input[type="checkbox"]{
+  margin-left: 1rem;
+}
+
+/*///////Hover//Animations Effects////////*/
+.btn:hover, .clearBtn:hover, .deleteTask:hover, h1:hover {
+  transform: scale(1.1); 
+  transition: transform 0.3s ease; 
+}
+
+.list-item:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.todo-container {
+  animation: backgroundAnimation 7s infinite alternate; 
+}
+
+@keyframes backgroundAnimation {
+  from {
+    filter: grayscale(100%); 
+  }
+  to {
+    filter: grayscale(0%); 
+  }
+}
+
+h1 {
+  opacity: 0;
+  animation: fadeIn 2s forwards; 
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
