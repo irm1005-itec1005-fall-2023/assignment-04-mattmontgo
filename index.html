@@ -7,7 +7,7 @@
 
   <!-- Set the charset we're using to UTF-8 -->
   <meta charset="utf-8" />
-
+  
   <!-- Set the screens default zoom / scale to 1 -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -16,14 +16,13 @@
 
   <!-- Set the CSS Reset File -->
   <link rel="stylesheet" href="./reset.css" />
-
+  
   <!-- Set the main stylesheet -->
   <link rel="stylesheet" href="./style.css" />
-
+  
   <!-- Set the Favicon  -->
   <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
 </head>
-<body>
 
   <!--
 
@@ -38,14 +37,51 @@
     - Has a team member conducted a code review and left a GitHub Issue in your repo?
     - Have you conducted a code review and left a GitHub Issue on your team member's repo?
 
+    Additional Citations
+    - ChatGPT for the completion of the CSS and also some additional functions using Javascript such as
+    checkbox commands.
+
   -->
 
+<body>
   <main>
-    <div id="app"></div>
+    <section class="Title"><h1>What's on the Agenda?!</h1></section>
+    
+    <div class="todo-container">
+
+      <div class="todo">
+        <ul class="list" id="todoList"></ul>
+
+        <div class="containers">
+          <div class="counters">
+            <div class="todoCount">
+              <p><span>0</span> Tasks left</p>
+            </div>
+
+            <div class="doneCount">
+              <p><span>0</span> Tasks done</p>
+            </div>
+          </div>
+
+          <div class="deleteBtn">
+            <button class="clearBtn">Clear All</button>
+          </div>
+      </div>
+
+        <div class="input">
+          <input
+            class="inputBox"
+            id="todoInput"
+            type="text"
+            placeholder="Add Todo Item"
+          />
+          <button class="btn">Add</button>
+        </div>
+    </div>
+    
+  </div>
   </main>
-
-  <!-- Add JavaScript File -->
-  <script src="./script.js"></script>
-
+  <script src="./script.js">
+    </script>
 </body>
 </html>
